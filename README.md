@@ -1,16 +1,13 @@
 # my_notes
 
-A new Flutter project.
+Project to create notes and share it with your friends,
+this project build with __flutter__
+ frontend  and __Laravel backend__ with these features
+ 1. Signup with sample design
+ 2. Login with Auth API with laravel
+ 3. share the link of the note
 
-## Getting Started
+ ## Screens
+ - signup screen, this screen connect with Post API from laravel
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+ ![signup](assest/img/signup.png)
