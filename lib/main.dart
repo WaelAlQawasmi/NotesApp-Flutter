@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primaryColor: Colors.green,
         colorScheme: ThemeData().colorScheme.copyWith(
-            primary: Colors.green,
+            primary: Color(0xFFA4D6A7),
             secondary: Color(0Xffff4874)
         ),
         primarySwatch: Colors.blue,
