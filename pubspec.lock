@@ -44,7 +44,7 @@ packages:
     source: hosted
     version: "1.0.5"
   dio:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: dio
       url: "https://pub.dartlang.org"
