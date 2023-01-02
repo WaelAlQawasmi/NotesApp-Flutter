@@ -140,7 +140,8 @@ class _SignUpState extends State<SignUp> {
                               'name': _nameController.text,
                               'email': _emailController.text,
                               'password': _passwordController.text,
-                              'accountType': selectedAcount
+                              'bio': selectedAcount,
+                              'password_confirmation': _passwordController.text,
                             };
                             if (_formKey.currentState!.validate()) {
                               print(user);

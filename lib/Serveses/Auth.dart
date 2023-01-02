@@ -16,7 +16,8 @@ class Auth extends ChangeNotifier{
   }
 
   void SignUp( Map creds) async {
-   await DioRequest.Request().post('/signup',data: creds);
+    var req= await DioRequest.Request().post('/register',data: creds);
+   print(req);
   }
 
 }
