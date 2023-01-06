@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_notes/Secreens/SignIn.dart';
 import 'package:my_notes/Secreens/SignUp.dart';
 import 'package:my_notes/Serveses/Auth.dart';
 import 'package:provider/provider.dart';
@@ -21,6 +22,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
+
+      initialRoute: '/',
+      routes: {
+        // When navigating to the "/" route, build the FirstScreen widget.
+        '/signup': (context) => const SignUp(),
+        // When navigating to the "/second" route, build the SecondScreen widget.
+        '/signin': (context) => const SignIn(),
+      },
+
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -38,7 +48,7 @@ class MyApp extends StatelessWidget {
         ),
         primarySwatch: Colors.blue,
       ),
-      home: const SignUp(),
+      home: const SignIn(),
     );
   }
 }

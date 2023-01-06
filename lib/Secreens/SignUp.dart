@@ -29,7 +29,8 @@ class _SignUpState extends State<SignUp> {
     return Scaffold(
       appBar: AppBar(
         shape: Border(bottom: BorderSide(color: Colors.greenAccent, width: 1)),
-        title: Center(
+        title: Container(
+          margin: EdgeInsets.only(left: 100),
             child: Text(
           "Sign up",
           style: TextStyle(color: Colors.black54),
