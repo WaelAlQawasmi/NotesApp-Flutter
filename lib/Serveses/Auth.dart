@@ -1,14 +1,28 @@
 
+import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:my_notes/Secreens/DioRequest.dart';
+import 'package:my_notes/User.dart';
 
 class Auth extends ChangeNotifier{
-  bool _isLogin=false;
-   bool get authantucated=>_isLogin;
-  void login(Map Card){
+   User ?_user;
 
-    _isLogin=true;
-    notifyListeners();
+  bool _isLogin=false;
+  bool get authantucated=>_isLogin;
+  String  ?_token;
+
+  void login(Map Card) async{
+    try{
+      Response response= await DioRequest.Request().post('/login',data: Card);
+      print(response.data.toString());
+      // this._token=response.data.toString();
+      _isLogin=true;
+      notifyListeners();
+    }
+    catch (e){
+      print(e);
+    }
+
   }
   void logout(){
     _isLogin=false;
@@ -17,7 +31,7 @@ class Auth extends ChangeNotifier{
 
   void SignUp( Map creds) async {
     var req= await DioRequest.Request().post('/register',data: creds);
-   print(req);
+     print(req);
     _isLogin=true;
     notifyListeners();
   }

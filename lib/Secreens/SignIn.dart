@@ -24,8 +24,8 @@ class _SignInState extends State<SignIn> {
         padding: EdgeInsets.all(19),
         child:Consumer<Auth>(builder: (context,auth,child){
           if(auth.authantucated){
-            // Navigator.pushNamed(context, '/signup');
-print(auth.authantucated);
+            Navigator.pushNamed(context, '/dashboard');
+          print(auth.authantucated);
           }
           return Form(
           key: _formKey,

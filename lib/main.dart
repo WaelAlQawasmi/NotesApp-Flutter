@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_notes/Secreens/Dashboard.dart';
 import 'package:my_notes/Secreens/SignIn.dart';
 import 'package:my_notes/Secreens/SignUp.dart';
 import 'package:my_notes/Serveses/Auth.dart';
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
         '/signup': (context) => const SignUp(),
         // When navigating to the "/second" route, build the SecondScreen widget.
         '/signin': (context) => const SignIn(),
+        '/dashboard': (context) => const Dashboard(),
       },
 
       theme: ThemeData(
