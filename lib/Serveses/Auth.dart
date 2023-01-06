@@ -4,7 +4,7 @@ import 'package:my_notes/Secreens/DioRequest.dart';
 
 class Auth extends ChangeNotifier{
   bool _isLogin=false;
-  bool get authantucated=>_isLogin;
+   bool get authantucated=>_isLogin;
   void login(Map Card){
 
     _isLogin=true;
@@ -18,6 +18,8 @@ class Auth extends ChangeNotifier{
   void SignUp( Map creds) async {
     var req= await DioRequest.Request().post('/register',data: creds);
    print(req);
+    _isLogin=true;
+    notifyListeners();
   }
 
 }
