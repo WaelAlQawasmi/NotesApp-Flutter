@@ -1,18 +1,17 @@
-import 'dart:core';
 
-class User {
+class UserInfo {
   String name;
   String email;
-  String email_verified_at;
+  String? email_verified_at;
   String bio;
   String phone;
   String job;
-  String current_team_id;
+  int current_team_id;
   String created_at;
   String updated_at;
   String profile_photo_url;
 
-  User(
+  UserInfo(
       this.name,
       this.email,
       this.email_verified_at,
@@ -24,7 +23,7 @@ class User {
       this.updated_at,
       this.profile_photo_url);
 
-  User.fromJson(Map<String, dynamic> json)
+  UserInfo.fromJson(Map<String, dynamic> json)
       : name = json['name'],
         email = json['email'],
         email_verified_at = json['email_verified_at'],
