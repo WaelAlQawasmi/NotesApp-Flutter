@@ -2,21 +2,24 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:my_notes/Secreens/DioRequest.dart';
-import 'package:my_notes/User.dart';
+
+import '../User.dart';
+
 
 class Auth extends ChangeNotifier{
-   User ?_user;
+  UserInfo ?  _user;
 
   bool _isLogin=false;
+  UserInfo? get User=>_user;
   bool get authantucated=>_isLogin;
   String  ?_token;
 
   void login(Map Card) async{
     try{
       Response response= await DioRequest.Request().post('/login',data: Card);
-      print(response.data.toString());
-      // this._token=response.data.toString();
-      _isLogin=true;
+       print("object");
+      this.valadateToken(response.data);
+      print(response.data);
       notifyListeners();
     }
     catch (e){
@@ -24,6 +27,32 @@ class Auth extends ChangeNotifier{
     }
 
   }
+
+   void valadateToken(var token) async{
+    if(token==null){
+      print(" null 000");
+      return;
+    }
+
+      try{
+      print('Bearer $token');
+        Response response= await DioRequest.Request().get('/user',options: Options(headers: {'Authorization':'Bearer $token'}));
+
+         this._user=UserInfo.fromJson(response.data);
+
+         this._isLogin=true;
+
+
+
+
+        notifyListeners();
+      }
+      catch(e){
+
+    print(e);
+    }
+     notifyListeners();
+   }
   void logout(){
     _isLogin=false;
     notifyListeners();

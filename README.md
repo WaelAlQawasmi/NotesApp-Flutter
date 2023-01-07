@@ -18,5 +18,8 @@ this project build with __flutter__
  - Login with validation
  ![login](assest/img/LoginValudation.png)
 
+ - Dashboard
+ - User account details
+ ![login](assest/img/dashboard.png)
  ## Backend
  - Laravel 9  this [ repo](https://github.com/WaelAlQawasmi/ShareNotes-Laravel)
